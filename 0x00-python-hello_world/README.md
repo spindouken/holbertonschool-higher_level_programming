@@ -1,0 +1,1 @@
+answers to 0x00-python
