@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-if number < 0
+if number < 0:
     flag = 1
 
 lastDigit = abs(number) % 10
 
-if flag = 1
+if flag = 1:
     lastDigit = lastDigit * -1
 
 
