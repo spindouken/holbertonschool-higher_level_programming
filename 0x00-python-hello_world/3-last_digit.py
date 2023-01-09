@@ -7,8 +7,7 @@ if number < 0:
 lastDigit = abs(number) % 10
 
 if flag = 1:
-    lastDigit = lastDigit * -1
-
+    lastDigit = -lastDigit
 
 print("Last digit of {} is {}".format(number, lastDigit), end="")
 if lastDigit > 5:
