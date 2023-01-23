@@ -54,9 +54,17 @@ add_integer will not accept strings
         ...
     TypeError: a and b must be integers or floats
 
-add_integer will not accept none
+add_integer will not accept no values being passed
 
     >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: a and b must be integers or floats
+
+add_integer will not accept None.
+note: In python Null is None
+
+    >>> add_integer(None)
     Traceback (most recent call last):
         ...
     TypeError: a and b must be integers or floats
