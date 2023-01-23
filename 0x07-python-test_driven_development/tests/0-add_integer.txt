@@ -1,0 +1,28 @@
+Module 0-add_integer
+
+def add_integer(a, b=98) defines the function add_integer,
+which add two integers together.
+Note: b will hold a value of 98 as default if no value is given to b.
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+add_integer will accept integer values
+
+    >>> add_integer(1, 1)
+    2
+
+    >>> add_integer(400, 4)
+    404
+
+    >>> add_integer(1, 1336)
+    1337
+
+add_integer will accept negative integer values
+
+    >>> add_integer(-1, 1)
+    0
+
+    >>> add_integer(-30, 20)
+    10
+
+add_integer will accept float values
