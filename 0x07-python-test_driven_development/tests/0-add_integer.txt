@@ -68,3 +68,8 @@ note: In python Null is None
     Traceback (most recent call last):
         ...
     TypeError: a and b must be integers or floats
+
+    >>> add_integer(4, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a and b must be integers or floats
