@@ -8,6 +8,9 @@ Note: b will hold a value of 98 as default if no value is given to b.
 
 add_integer will accept integer values
 
+    >>> add_integer(2)
+    100
+
     >>> add_integer(1, 1)
     2
 
@@ -26,3 +29,34 @@ add_integer will accept negative integer values
     10
 
 add_integer will accept float values
+note: the indicated typecast is int, so the float will always round down
+
+    >>> add_integer(5.4, 5)
+    10
+
+    >>> add_integer(2.7, 8.4)
+    10
+
+add_integer will not accept strings
+
+    >>> add_integer("yolo", "swag")
+    Traceback (most recent call last):
+        ...
+    TypeError: a and b must be integers or floats
+
+    >>> add_integer(7, "swag")
+    Traceback (most recent call last):
+        ...
+    TypeError: a and b must be integers or floats
+
+    >>> add_integer("yolo", 7)
+    Traceback (most recent call last):
+        ...
+    TypeError: a and b must be integers or floats
+
+add_integer will not accept none
+
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: a and b must be integers or floats
