@@ -28,8 +28,17 @@ matrix_divided will accept an empty matrix to no avail
     >>> print(matrix_divided(matrix, 3))
     [[], []]
 
+Failure if empty list is given
+Note:TypeError will be raised
+
+
 Failure if matrix is not a list of lists
 Note: TypeError will be raised
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 	>>> matrix = "string"
 	>>> print(matrix_divided(matrix, 3))
