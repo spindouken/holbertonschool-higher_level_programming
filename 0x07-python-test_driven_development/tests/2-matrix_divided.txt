@@ -26,10 +26,11 @@ matrix_divided works with floats as values in the matrix
 matrix_divided works with negative values
 
     >>> matrix = [
-    ...	[-3, -3, -3],
-    ...	[-3, -3, -3]
+    ...	[-6, -3, -3],
+    ...	[-3, -6, -3]
     ... ]
-    [[-1, -1, -1], [-1, -1, -1]]
+    >>> print(matrix_divided(matrix, 3))
+    [[-2, -1, -2], [-1, -2, -1]]
 
 matrix_divided will also accept negative values, integers, and floats all at once
 
@@ -51,8 +52,7 @@ Note: TypeError will be raised
 
     >>> matrix = []
     >>> print(matrix_divided(matrix, 3))
-    Traceback (most recent call last):
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    []
 
     >>> matrix = "string"
     >>> print(matrix_divided(matrix, 3))
@@ -93,7 +93,7 @@ Note: TypeError will be raised
 
     >>> print(matrix_divided(None, 3))
     Traceback (most recent call last):
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    TypeError: object of type 'NoneType' has no len()
 
 Failure if divider (div) is not an integer or float
 Note: TypeError will be raised
@@ -122,6 +122,8 @@ Note: also not an int or float, will raise TypeError
     ...	[4, 5, 6]
     ... ]
     >>> print(matrix_divided(matrix, (3, 4)))
+    Traceback (most recent call last):
+    TypeError: div must be a number
 
 Failure if attempt to divide by zero
 Note: ZeroDivisionError will be raised
