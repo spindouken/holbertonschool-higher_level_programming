@@ -1,0 +1,63 @@
+Module 4-print_square.txt
+
+def print_square(size) prints a square made of hashtags (#)
+
+    >>> print_square = __import__('4-print_square').print_square
+
+The function expects, and works well with, two strings
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+edgecases planned:
+zero size
+negative size
+float size
+size None
+no arguments
+multiple arguments
+
+Function will not accept size not >= 0
+
+    >>> print_square(0)
+    size must >= 0
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Failure if negative integer value given
+Note: will raise ValueError
+
+    >>> print_square(-5)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Failure if float value given
+Note: will raise TypeError
+
+    >>> print_square(.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Failure if None value given
+Note: will raise TypeError
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer    
+
+Failure if no arguments are given
+Note: TypeError will be raised
+
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Failure if multiple arguments are given
+Note: TypeError will be raised
+
+    >>> print_square(2, 3)
+    Traceback (most recent call last):
+    TypeError: print_square() takes 1 positional argument but 2 were given
