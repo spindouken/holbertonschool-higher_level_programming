@@ -91,6 +91,15 @@ Note: TypeError will be raised
 	Traceback (most recent call last):
 	TypeError: div must be a number
 
+Failure if attempt more than one divisor
+Note: also not an int or float, will raise TypeError
+
+	>>> matrix = [
+	...	[1, 2, 3],
+	...	[4, 5, 6]
+	... ]
+	>>> print(matrix_divided(matrix, (3, 4)))
+
 Failure if attempt to divide by zero
 Note: ZeroDivisionError will be raised
 
