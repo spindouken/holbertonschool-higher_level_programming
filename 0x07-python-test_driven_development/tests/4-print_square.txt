@@ -12,14 +12,6 @@ The function expects, and works well with, two strings
     ####
     ####
 
-edgecases planned:
-zero size
-negative size
-float size
-size None
-no arguments
-multiple arguments
-
 Function will not accept size not >= 0
 
     >>> print_square(0)
@@ -58,6 +50,6 @@ Note: TypeError will be raised
 Failure if multiple arguments are given
 Note: TypeError will be raised
 
-    >>> print_square(2, 3)
+    >>> print_square(1, 4)
     Traceback (most recent call last):
     TypeError: print_square() takes 1 positional argument but 2 were given
