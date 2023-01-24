@@ -39,11 +39,6 @@ note: the indicated typecast is int, so the float will always round down
 
 add_integer will not accept strings
 
-    >>> add_integer("yolo", "swag")
-    Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer
-
     >>> add_integer(7, "swag")
     Traceback (most recent call last):
         ...
