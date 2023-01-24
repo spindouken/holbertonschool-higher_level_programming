@@ -1,0 +1,66 @@
+Module 3-say_my_name
+
+def say_my_name(first_name, last_name="") prints "My name is <first name> <last name>"
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+The function expects, and works well with, two strings
+
+    >>> say_my_name("Sos", "Kratos")
+    My name is Sos Kratos
+
+The function can recieve only a first name, or one string
+Note: empty second string will result in extra space after given string
+
+	>>> say_my_name("Sos")
+	My name is Sos 
+
+The function can receive a first name with an empty string as the last name
+
+    >>> say_my_name("Sos", "")
+    My name is Sos 
+
+The function can recieve a last name only, but the first string must be blank
+Note: There will be an extra space before the "last name"
+
+    >>> say_my_name("", "Kratos")
+    My name is  Kratos
+
+The function cannot receive integers
+Note: Any integer input will raise TypeError
+
+    >>> say_my_name(123, "Kratos")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Sos", 123)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+It also cannot receive lists
+
+   	>>> say_my_name("Plato", ["Sos", "Kratos"])
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name(["Sos", "Kratos"], "Plato")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+It also cannot receive type None
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+If no args given
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+More than two args given will raise TypeError
+
+    >>> say_my_name("Sos", "Kratos", "Plato")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
