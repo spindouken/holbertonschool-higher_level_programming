@@ -2,7 +2,7 @@
 """say_my_name prints: "My name is <first name> <last name>"""
 
 
-def say_my_name(first_name:str, last_name:str =""):
+def say_my_name(first_name, last_name=""):
     """
     This function takes in two string arguments: first_name and last_name
 
