@@ -1,0 +1,16 @@
+Module 5-text_indentation
+
+Possible edge-cases:
+normal text including . ? and :
+only one use of one of those special characters
+test with no special characters
+multiple consecutive instances of a special character
+starts or ends with special character
+no argument
+more than one argument
+only whitespace
+not a string
+tab or newline before or after special characters
+unicode characters
+None as input
+extremely long text
