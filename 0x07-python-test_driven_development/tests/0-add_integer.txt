@@ -42,37 +42,37 @@ add_integer will not accept strings
     >>> add_integer("yolo", "swag")
     Traceback (most recent call last):
         ...
-    TypeError: a and b must be integers or floats
+    TypeError: a must be an integer
 
     >>> add_integer(7, "swag")
     Traceback (most recent call last):
         ...
-    TypeError: a and b must be integers or floats
+    TypeError: b must be an integer
 
     >>> add_integer("yolo", 7)
     Traceback (most recent call last):
         ...
-    TypeError: a and b must be integers or floats
+    TypeError: a must be an integer
 
 add_integer will not accept no values being passed
 
     >>> add_integer()
     Traceback (most recent call last):
         ...
-    TypeError: a and b must be integers or floats
+    TypeError: add_integer() missing 1 required positional argument: 'a'
 
-add_integer will not accept None.
+add_integer will not accept None
 note: In python Null is None
 
     >>> add_integer(None)
     Traceback (most recent call last):
         ...
-    TypeError: a and b must be integers or floats
+    TypeError: a must be an integer
 
     >>> add_integer(4, None)
     Traceback (most recent call last):
         ...
-    TypeError: a and b must be integers or floats
+    TypeError: b must be an integer
 
 add_integer will not receive three arguments
 Note: TypeError will be raised
