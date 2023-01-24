@@ -39,6 +39,11 @@ note: the indicated typecast is int, so the float will always round down
 
 add_integer will not accept strings
 
+    >>> add_integer("yolo", "swag")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
     >>> add_integer(7, "swag")
     Traceback (most recent call last):
         ...
@@ -76,3 +81,13 @@ Note: TypeError will be raised
     Traceback (most recent call last):
         ...
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+add_integer will not receive numbers that cause an overflow error
+
+    >>> add_integer(float("inf"))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float("-inf"))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
