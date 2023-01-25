@@ -30,7 +30,7 @@ matrix_divided works with negative values
     ...	[-3, -6, -3]
     ... ]
     >>> matrix_divided(matrix, 3)
-    [[-2.0, -1.0, -2.0], [-1.0, -2.0, -1.0]]
+    [[-2.0, -1.0, -1.0], [-1.0, -2.0, -1.0]]
 
 matrix_divided will also accept negative values, integers, and floats all at once
 
