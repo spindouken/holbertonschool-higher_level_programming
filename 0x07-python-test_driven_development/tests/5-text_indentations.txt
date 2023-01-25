@@ -1,16 +1,63 @@
 Module 5-text_indentation
 
-Possible edge-cases:
-normal text including . ? and :
-only one use of one of those special characters
+Possible additional edge-cases:
 test with no special characters
 multiple consecutive instances of a special character
 starts or ends with special character
-no argument
-more than one argument
-only whitespace
-not a string
 tab or newline before or after special characters
 unicode characters
-None as input
-extremely long text
+
+def text_indentation(text) prints a text with 2 new lines after each of these characters: ., ?, and :
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+    >>> text_indentation("A lot of latin.")
+    A lot of latin.
+    <BLANKLINE>
+
+No spaces are printed at the beginning and the end of a line even if they're provided.
+Note: If only whitespace is provided there will be blank output
+
+    >>> text_indentation("   A lot of latin.")
+    A lot of latin.
+    <BLANKLINE>
+
+    >>> text_indentation("Sus.    ")
+    Sus.
+    <BLANKLINE>
+
+    >>> text_indentation("    ")
+
+    >>> text_indentation("You:   Sussy.   Baka?  ")
+    You:
+    <BLANKLINE>
+    Sussy.
+    <BLANKLINE>
+    Baka?
+    <BLANKLINE>
+
+Failure if the input is not a string (or includes non-strings)
+Note: TypeError will be raised
+
+    >>> text_indentation(9001)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation({"Sussy": 4, "Baka": 7})
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Failure if no arguments given or if more than one argument given
+Note: TypeError will be raised
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    >>> text_indentation("Hello?", "is this thing on?")
+    Traceback (most recent call last):
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
