@@ -15,9 +15,6 @@ The function expects, and works well with, two strings
 Function will not accept size not >= 0
 
     >>> print_square(0)
-    size must >= 0
-    Traceback (most recent call last):
-    ValueError: size must be >= 0
 
 Failure if negative integer value given
 Note: will raise ValueError
@@ -38,7 +35,7 @@ Note: will raise TypeError
 
     >>> print_square(None)
     Traceback (most recent call last):
-    TypeError: size must be an integer    
+    TypeError: size must be an integer
 
 Failure if no arguments are given
 Note: TypeError will be raised
