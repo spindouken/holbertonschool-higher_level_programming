@@ -4,11 +4,11 @@ Based module contains based class Base
 Based class Base contains private class '__nb_objects'
     that keeps track of the number of instances created
     and a public instance attribute 'id' that is either
-    assigned or auto-generated based 
+    assigned or auto-generated based
     on the '__nb_objects' attribute.
     Also, contains class constructor __init__.
-    
 """
+
 
 class Base:
     """
