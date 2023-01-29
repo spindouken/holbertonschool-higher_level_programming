@@ -9,10 +9,8 @@ class Student:
         last_name (str): last name of student
         age (int): age of student
     """
-
     def __init__(self, first_name, last_name, age):
         """Initialize a student class"""
-
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -32,11 +30,10 @@ class Student:
                 element in list. This is to check whether the element is
                 presentin the __dict__ of the "Student" class object.
         """
-
         newDictionary = {}
-        if attributes is None:
+        if attrs is None:
             return self.__dict__
-        for element in attributes:
+        for element in attrs:
             if element in self.__dict__:
                 newDictionary[element] = self.__dict__[element]
         return newDictionary
@@ -47,6 +44,5 @@ class Student:
         key: public attribute name
         value: dictionary value of the public attribute
         """
-
         for key, value in json.items():
             setattr(self, key, value)
