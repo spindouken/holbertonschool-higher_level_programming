@@ -4,10 +4,8 @@
 
 class BaseGeometry:
     """Class of BaseGeometry"""
-
     def area(self):
         """raises an exception error with message"""
-
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
@@ -16,8 +14,9 @@ class BaseGeometry:
             name (str): string
             value (int): integer
         """
-
+        self.name = name
         if type(value) != int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+        self.value = value
