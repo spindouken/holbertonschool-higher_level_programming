@@ -7,9 +7,8 @@ or run with run all tests command:
 OR just run it like a program! (thanks to bottom function)
 """
 import unittest
-from models import base
-from models import rectangle
-Rectangle = rectangle.Rectangle
+from models.base import Base
+from models.rectangle import Rectangle
 
 
 class testDatRectangle(unittest.TestCase):
