@@ -90,3 +90,11 @@ class Rectangle(Base):
         """Print rectangle in stdout with character #"""
         for i in range(self.height):
             print('#' * self.width)
+
+    def __str__(self):
+        """
+        Overrides the built-in __str__ method to return a string in the format:
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
