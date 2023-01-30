@@ -50,6 +50,15 @@ class Square(Rectangle):
                 if hasattr(self, key):
                     setattr(self, key, value)
 
+    def to_dictionary(self):
+        """returns dictionary representation of based rectangle"""
+        return {
+            "id": self.id,
+            "x": self.x,
+            "size": self.size,
+            "y": self.y
+        }
+
     def __str__(self):
         """str representation of Square"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
