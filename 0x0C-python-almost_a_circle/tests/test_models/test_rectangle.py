@@ -144,11 +144,11 @@ class testDatRectangle(unittest.TestCase):
     def test_str_override(self):
         r = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(str(r), "[Rectangle] (5) 3/4 - 1/2")
- 
+
     def test_str_override_negative(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r = Rectangle(-10, -20, -30, -40, -50)
-        
+
     def test_str_override_zero(self):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r = Rectangle(0, 0, 0, 0, 0)
@@ -184,6 +184,12 @@ class testDatRectangle(unittest.TestCase):
         self.assertEqual(self.r.height, 13)
         self.assertEqual(self.r.x, 14)
         self.assertEqual(self.r.y, 15)
+
+    # dictionary tests
+    def test_to_dictionary(self):
+        r = Rectangle(10, 10, 2, 1, 9)
+        expected = {'x': 2, 'y': 1, 'id': 9, 'height': 10, 'width': 10}
+        self.assertEqual(r.to_dictionary(), expected)
 
 if __name__ == '__main__':
     unittest.main()
