@@ -97,6 +97,18 @@ class Rectangle(Base):
                 print('#', end="")
             print()
 
+    def update(self, *args, **kwargs):
+        """assign an argument to each attribute"""
+        argList = ["id", "width", "height", "x", "y"]
+
+        if args and len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, argList[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
     def __str__(self):
         """
         Overrides the built-in __str__ method to return a string in the format:
