@@ -35,6 +35,21 @@ class Square(Rectangle):
         self.width = size
         self.height = size
 
+    def update(self, *args, **kwargs):
+        """assigns a key/value argument to attributes
+        **kwargs can be thought of as a double pointer
+            to a dictionary: key/value
+        """
+        argList = ["id", "size", "x", "y"]
+
+        if args and len(args) != 0:
+            for i in range(len(args)):
+                setattr(self, argList[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
     def __str__(self):
         """str representation of Square"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
