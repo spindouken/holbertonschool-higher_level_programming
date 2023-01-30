@@ -50,7 +50,6 @@ class Square(Rectangle):
                 if hasattr(self, key):
                     setattr(self, key, value)
 
-
     def __str__(self):
         """str representation of Square"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
