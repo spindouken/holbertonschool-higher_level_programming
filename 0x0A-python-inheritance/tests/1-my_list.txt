@@ -1,12 +1,8 @@
 Module 1-my_list
 
-Importing MyList class:
-
     >>> MyList = __import__('1-my_list').MyList
 
-Usage:
-
-Can be initialized with no args
+Can be initialized with no args:
 
     >>> my_list = MyList()
     >>> type(my_list)
@@ -19,61 +15,66 @@ Can be initialized with no args
     >>> my_list.print_sorted()
     []
 
-TypeError raised if None is as argument:
+TypeError raised if None as argument:
 
-	>>> my_list = MyList(None)
-	Traceback (most recent call last):
-	TypeError: 'NoneType' object is not iterable
+    >>> my_list = MyList(None)
+    Traceback (most recent call last):
+    TypeError: 'NoneType' object is not iterable
 
-Can be initialized with a list of integers
+Can be initialized with a list of integers:
 
-	>>> my_list = MyList([3, 2, 1])
-	>>> type(my_list)
-	<class '1-my_list.MyList'>
+    >>> my_list = MyList([3, 2, 1])
+    >>> type(my_list)
+    <class '1-my_list.MyList'>
 
-	>>> print(my_list)
-	[3, 2, 1]
+    >>> print(my_list)
+    [3, 2, 1]
 
-	>>> my_list = MyList([1, 2, 3])
-	>>> my_list.print_sorted()
-	[1, 2, 3]
+    >>> my_list = MyList([3, 2, 1])
+    >>> my_list.print_sorted()
+    [1, 2, 3]
 
-Can be initialized with a list of strings
+Can work with strings:
 
-	>>> my_list = MyList(['yolo', 'swag', 'ya'])
-	>>> type(my_list)
-	<class '1-my_list.MyList'>
+    >>> my_list = MyList(['yolo', 'swag', 'ya'])
+    >>> type(my_list)
+    <class '1-my_list.MyList'>
 
-	>>> print(my_list)
-	['yolo', 'swag', 'ya']
+    >>> print(my_list)
+    ['yolo', 'swag', 'ya']
 
-	>>> my_list = MyList(["yolo", "swag", "ya"])
-	>>> my_list.print_sorted()
-	['swag', 'ya', 'yolo']
+    >>> my_list = MyList(["yolo", "swag", "ya"])
+    >>> my_list.print_sorted()
+    ['swag', 'ya', 'yolo']
 
-Can be initialized with a list of mixed data types
+Can be initialized with a list of mixed data types:
 
-	>>> my_list = MyList([4, 'yolo', 2, 'swag'])
-	>>> type(my_list)
-	<class '1-my_list.MyList'>
+    >>> my_list = MyList([4, 'yolo', 2, 'swag'])
+    >>> type(my_list)
+    <class '1-my_list.MyList'>
 
-	>>> print(my_list)
-	[4, "yolo", 2, "swag"]
+    >>> print(my_list)
+    [4, 'yolo', 2, 'swag']
 
-	>>> my_list = MyList([4, 'yolo', 2, 'swag'])
-	>>> my_list.print_sorted()
-	Traceback (most recent call last):
-	TypeError: '<' not supported between instances of 'str' and 'int'
+    >>> my_list = MyList([4, 'yolo', 2, 'swag'])
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'str' and 'int'
 
-Can deal with list of duplicates
+Can work with negative values, repeat values, and floats:
 
-	>>> my_list = MyList([3, 2, 1, 2, 3, 1])
-	>>> type(my_list)
-	<class '1-my_list.MyList'>
+    >>> my_list = MyList([3, -2.4, 1, 1.7, -2, 2, -3.9, -1])
+    >>> type(my_list)
+    <class '1-my_list.MyList'>
 
-	>>> print(my_list)
-	[3, 2, 1, 2, 3, 1]
+    >>> print(my_list)
+    [3, -2.4, 1, 1.7, -2, 2, -3.9, -1]
 
-	>>> my_list = MyList([3, 2, 1, 2, 3, 1])
-	>>> my_list.print_sorted()
-	[1, 1, 2, 2, 3, 3]
+    >>> my_list = MyList([3, -2.4, 1, 1.7, -2, 2, -3.9, -1])
+    >>> my_list.print_sorted()
+    [-3.9, -2.4, -2, -1, 1, 1.7, 2, 3]
+
+
+    >>> my_list = MyList([2.2, 5.7, -0.4, -5])
+    >>> my_list.print_sorted()
+    [-5, -0.4, 2.2, 5.7]
