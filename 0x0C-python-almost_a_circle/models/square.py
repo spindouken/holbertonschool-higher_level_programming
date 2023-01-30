@@ -24,6 +24,21 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
         self.size = size
 
+@property
+    def size(self):
+        """returns size of based square"""
+        return self.width
+
+    @size.setter
+    def size(self, size):
+        """sets size of based square"""
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        if size <= 0:
+            raise ValueError("size must be > 0")
+        self.__width = size
+        self.__height = size
+
     def __str__(self):
         """str representation of Square"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
