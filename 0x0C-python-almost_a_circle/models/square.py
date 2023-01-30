@@ -36,8 +36,8 @@ class Square(Rectangle):
             raise TypeError("size must be an integer")
         if size <= 0:
             raise ValueError("size must be > 0")
-        self.__width = size
-        self.__height = size
+        self.width = size
+        self.height = size
 
     def __str__(self):
         """str representation of Square"""
