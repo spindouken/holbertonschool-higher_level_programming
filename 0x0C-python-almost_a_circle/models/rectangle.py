@@ -97,14 +97,6 @@ class Rectangle(Base):
                 print('#', end="")
             print()
 
-    def __str__(self):
-        """
-        Overrides the built-in __str__ method to return a string in the format:
-        [Rectangle] (<id>) <x>/<y> - <width>/<height>
-        """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
-                                                       self.width, self.height)
-
     def update(self, *args):
         if len(args) > 0:
             self.id = args[0]
@@ -116,3 +108,11 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) > 4:
             self.y = args[4]
+
+    def __str__(self):
+        """
+        Overrides the built-in __str__ method to return a string in the format:
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
+                                                       self.width, self.height)
