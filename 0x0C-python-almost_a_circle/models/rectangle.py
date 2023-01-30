@@ -98,7 +98,10 @@ class Rectangle(Base):
             print()
 
     def update(self, *args, **kwargs):
-        """assign an argument to each attribute"""
+        """assigns a key/value argument to attributes
+        **kwargs can be thought of as a double pointer
+            to a dictionary: key/value
+        """
         argList = ["id", "width", "height", "x", "y"]
 
         if args and len(args) != 0:
