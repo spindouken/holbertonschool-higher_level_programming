@@ -8,6 +8,7 @@ Based class Base contains private class '__nb_objects'
     on the '__nb_objects' attribute.
     Also, contains class constructor __init__.
 """
+import json
 
 
 class Base:
