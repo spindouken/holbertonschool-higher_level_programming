@@ -9,6 +9,7 @@ Based class Base contains private class '__nb_objects'
     Also, contains class constructor __init__.
 """
 import json
+from os import path
 
 
 class Base:
@@ -64,3 +65,16 @@ class Base:
             dummy_instance = cls(1)
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        file_name = cls.__name__ + ".json"
+        instance_list = []
+        if path.exists(file_name):
+            with open(file_name, "r", encoding="utf-8") as f:
+                new_dictionary = cls.from_json_string(f.read())
+                for instance in new_dictionary:
+                    instance_list.append(cls.create(**instance))
+                return instance_list
+        else:
+            return []
