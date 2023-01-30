@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Based unittest for Rectangle class
+Based unittest for Square class
 run with python3 -m unittest tests/test_models/test_square.py
     or run with run all tests command:
         "python3 -m unittest discover tests"

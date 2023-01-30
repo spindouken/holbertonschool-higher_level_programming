@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
 Based unittest for Base class
-run with python3 -m unittest tests/base_test.py
-or run with run all tests command:
-    python3 -m unittest discover tests
-OR just run it like a program! (thanks to bottom function)
+run with python3 -m unittest tests/test_models/base_test.py
+    or run with run all tests command:
+        "python3 -m unittest discover tests"
+    OR just run it like a program! (thanks to bottom function)
 """
 import unittest
 from models.base import Base
