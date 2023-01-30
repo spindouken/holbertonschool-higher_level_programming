@@ -24,10 +24,10 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
         self.size = size
 
-@property
+    @property
     def size(self):
-        """returns size of based square"""
-        return self.width
+            """returns size of based square"""
+            return self.width
 
     @size.setter
     def size(self, size):
