@@ -26,7 +26,7 @@ class testIfBased(unittest.TestCase):
         base1 = Base(None)
         base2 = Base(None)
         self.assertEqual(base1.id, base2.id - 1)
-        
+
     def test_no_args(self):
         """leave Base id assignment blank
         each base object should be automatically assigned an id"""
