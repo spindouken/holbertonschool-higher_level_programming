@@ -19,7 +19,7 @@ if __name__ == '__main__':
         db=sys.argv[3],
         charset="utf8"
     )
-    
+
     # Create a cursor object to execute SQL queries
     cursor = db.cursor()
 
