@@ -11,13 +11,13 @@ if __name__ == '__main__':
                          user=sys.argv[1], passwd=sys.argv[2],
                          db=sys.argv[3], charset="utf8")
     cr = db.cursor()
-    myQuery = " ".join([
+    query = " ".join([
         "SELECT cities.name FROM cities",
         "INNER JOIN states ON states.id = cities.state_id",
         "WHERE states.name LIKE BINARY '{}'",
         "ORDER BY cities.id",
         ]).format(sys.argv[4])
-    cr.execute(myQuery)
+    cr.execute(query)
     res = cr.fetchall()
     strRes = ', '.join([i[0] for i in res])
     print(strRes)
