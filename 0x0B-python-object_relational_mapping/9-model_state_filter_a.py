@@ -18,7 +18,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     # Query all states containing 'a' and order by id
-    states_with_a = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+    states_with_a = session.query(State) \
+                                        .filter(State.name.like('%a%')) \
+                                        .order_by(State.id)
 
     # Print out the states that contain 'a'
     for state in states_with_a:
