@@ -16,7 +16,7 @@ if __name__ == '__main__':
         "INNER JOIN states ON states.id = cities.state_id",
         "ORDER BY cities.id"
         ])
-    cr.execute(query)
+    cursor.execute(query)
 
     # fetch all the rows as a list of tuples
     rows = cursor.fetchall()
