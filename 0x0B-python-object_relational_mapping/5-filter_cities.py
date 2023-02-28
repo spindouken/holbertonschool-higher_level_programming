@@ -10,27 +10,16 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=sys.argv[1], passwd=sys.argv[2],
                          db=sys.argv[3], charset="utf8")
-    # Create a cursor object
-    cursor = db.cursor()
-
-    # Define the SQL query
-    query = ("SELECT cities.id, cities.name, states.name "
-             "FROM cities "
-             "JOIN states "
-             "ON cities.state_id = states.id "
-             "WHERE states.name = %s "
-             "ORDER BY cities.id ASC")
-
-    # Execute the query
-    cursor.execute(query, (state_name,))
-
-    # Fetch all the rows
-    rows = cursor.fetchall()
-
-    # Print the results
-    for row in rows:
-        print(row)
-
-    # Close cursor and database connection
-    cursor.close()
+    cr = db.cursor()
+    myQuery = " ".join([
+        "SELECT cities.name FROM cities",
+        "INNER JOIN states ON states.id = cities.state_id",
+        "WHERE states.name LIKE BINARY '{}'",
+        "ORDER BY cities.id",
+        ]).format(sys.argv[4])
+    cr.execute(myQuery)
+    res = cr.fetchall()
+    strRes = ', '.join([i[0] for i in res])
+    print(strRes)
+    cr.close()
     db.close()
