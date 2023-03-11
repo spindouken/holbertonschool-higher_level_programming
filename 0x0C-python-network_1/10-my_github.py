@@ -19,7 +19,8 @@ def get_user_id(username: str, password: str) -> int:
     Returns:
         int: The ID of the authenticated user.
     """
-    response = requests.get('https://api.github.com/user', auth=(username, password))
+    response = requests.get('https://api.github.com/user',
+                            auth=(username, password))
     data = response.json()
     return data.get('id')
 
