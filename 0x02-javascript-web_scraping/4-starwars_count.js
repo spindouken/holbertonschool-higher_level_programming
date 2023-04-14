@@ -8,14 +8,17 @@ request(api, (err, response, body) => {
     console.error(err);
     return;
   }
-  const films = JSON.parse(body).results;
-  let count = 0;
 
-  films.forEach((film) => {
-    if (film.characters.includes(`https://swapi-api.hbtn.io/api/people/${targetID}/`)) {
-      count++;
-    }
-  });
+  if (response.statusCode === 200) {
+    const films = JSON.parse(body).results;
+    let count = 0;
 
-  console.log(count);
+    films.forEach((film) => {
+      if (film.characters.includes(`https://swapi-api.hbtn.io/api/people/${targetID}/`)) {
+        count++;
+      }
+    });
+
+    console.log(count);
+  }
 });
