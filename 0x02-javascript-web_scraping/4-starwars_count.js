@@ -1,24 +1,40 @@
 #!/usr/bin/node
-const request = require('request');
-const api = process.argv[2];
-const targetID = 18;
 
-request(api, (err, response, body) => {
-  if (err) {
-    console.error(err);
+// Define the target URL to retrieve the data from
+const targetURL = process.argv[2];
+
+// Import the request library
+const request = require('request');
+
+// Define the request options
+const requestOptions = {
+  url: targetURL,
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+};
+
+// Make the HTTP request
+request(requestOptions, function (error, response, body) {
+  if (error) {
+    console.error('Error occurred while making request:', error);
     return;
   }
 
-  if (response.statusCode === 200) {
-    const films = JSON.parse(body).results;
-    let count = 0;
+  // Extract the films from the response body
+  const films = JSON.parse(body).results;
 
-    films.forEach((film) => {
-      if (film.characters.includes(`https://swapi-api.hbtn.io/api/people/${targetID}/`)) {
-        count++;
+  // Count the number of characters with the string '18' in their URL
+  let characterCount = 0;
+  for (const film of films) {
+    for (const character of film.characters) {
+      if (character.includes('18')) {
+        characterCount++;
       }
-    });
-
-    console.log(count);
+    }
   }
+
+  // Print the character count to the console
+  console.log(characterCount);
 });
